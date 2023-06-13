@@ -19,9 +19,10 @@ jobs:
         sudo apt install -y git coreutils ruby-dev build-essential; \
         sudo gem install bundler; \
         ls -lrt; \
-        echo "change permissions"; \
-        sudo chown runner:docker -R /var/lib/; \
-        sudo chown runner:docker -R /usr/local/; \ 
+        echo "change permissions /var/lib/gem"; \
+        sudo chown runner:docker -R /var/lib/gems; \
+        echo "change permissions /usr/local/bin"; \
+        sudo chown runner:docker -R /usr/local/bin; \ 
         echo "run bundle"; \
         bundle; \
         echo "change directory to tools"; \
