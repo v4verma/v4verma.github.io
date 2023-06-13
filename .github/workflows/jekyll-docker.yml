@@ -23,8 +23,6 @@ jobs:
         sudo chown runner:docker -R /var/lib/gems; \
         echo "run bundle"; \
         bundle; \
-        echo "change directory to tools"; \
-        cd tools; \
-        ls -lrt; \
         echo "run init"
-        ./init.sh
+        ./tools/init; \
+        git status; \
