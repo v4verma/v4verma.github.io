@@ -54,13 +54,15 @@ jobs:
           bundle exec jekyll b -d "_site";
           ls -lrt;
           cp -r assets/* _site/assets/;
+          cd _site/assets/js/dist;
+          ls -lrt;
         env:
           JEKYLL_ENV: "production"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "_site"
+          path: "_site/*"
 
   deploy:
     environment:
