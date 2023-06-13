@@ -15,12 +15,12 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the site in the jekyll/builder container
       run: | 
-      sudo apt update; \
-      sudo apt install -y git coreutils ruby-dev build-essential; \
-      sudo gem install bundler; \
-      ls -lrt; \
-      sudo chown runner:docker -R /var/lib/; \
-      sudo chown runner:docker -R /usr/local/; \ 
-      bundle; \
-      cd tools; \
-      ./init.sh
+        sudo apt update; \
+        sudo apt install -y git coreutils ruby-dev build-essential; \
+        sudo gem install bundler; \
+        ls -lrt; \
+        sudo chown runner:docker -R /var/lib/; \
+        sudo chown runner:docker -R /usr/local/; \ 
+        bundle; \
+        cd tools; \
+        ./init.sh
