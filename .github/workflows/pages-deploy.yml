@@ -51,6 +51,8 @@ jobs:
 
       - name: Build site
         run: |
+          git config --global user.email 'connect.amit@hotmail.com'
+          git config --global user.name 'Amit Verma'
           bundle exec jekyll b -d "_site";
           ./tools/init
           ls -lrt;
