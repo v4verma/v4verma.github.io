@@ -32,7 +32,7 @@ jobs:
         with:
           set-safe-directory: '*'
           fetch-depth: 0
-          # submodules: true
+          #submodules: true
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
@@ -52,6 +52,11 @@ jobs:
       - name: Build site
         run: |
           bundle exec jekyll b -d "_site";
+          ./tools/init
+          ls -lrt;
+          ls -lrt _site/assets/;
+          ls -lrt _site/assets/js;
+          cp -r assets _site/
           ls -lrt;
           ls -lrt _site/assets/;
           ls -lrt _site/assets/js;
