@@ -24,5 +24,4 @@ jobs:
         echo "run bundle"; \
         bundle; \
         echo "run init"
-        ./tools/init; \
-        git status; \
+        ./tools/init;
