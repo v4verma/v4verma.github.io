@@ -53,9 +53,8 @@ jobs:
         run: |
           bundle exec jekyll b -d "_site";
           ls -lrt;
-          cp -r assets/* _site/assets/;
-          cd _site/assets/js/dist;
-          ls -lrt;
+          ls -lrt _site/assets/;
+          ls -lrt _site/assets/js;
         env:
           JEKYLL_ENV: "production"
 
