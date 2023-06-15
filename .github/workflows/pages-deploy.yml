@@ -55,6 +55,7 @@ jobs:
           git config --global user.name 'Amit Verma'
           bundle exec jekyll b -d "_site";
           ./tools/init
+          cp -r assets _site/
         env:
           JEKYLL_ENV: "production"
           
