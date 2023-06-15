@@ -55,14 +55,6 @@ jobs:
           git config --global user.name 'Amit Verma'
           bundle exec jekyll b -d "_site";
           ./tools/init
-          ls -lrt;
-          cat _site/about/index.html
-          ls -lrt _site/assets/;
-          ls -lrt _site/assets/js;
-          cp -r assets _site/
-          ls -lrt;
-          ls -lrt _site/assets/;
-          ls -lrt _site/assets/js;
         env:
           JEKYLL_ENV: "production"
           
