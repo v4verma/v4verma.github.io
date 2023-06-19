@@ -1,5 +1,5 @@
 ---
-title: Lost in Translation: A Tech Geek's Hilarious Journey
+title: Lost in Translation- A Tech Geek's Hilarious Journey
 order: 4
 ---
 
