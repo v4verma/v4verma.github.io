@@ -1,0 +1,23 @@
+Title: Understanding Hexagonal Architecture
+
+---
+
+So today, we're going to delve into the world of hexagonal architecture. By the end of this article, you will have a solid understanding of what hexagonal architecture is, how it works, and when it is suitable to implement. If you have prior knowledge of software architecture, you might be familiar with the three-tier model. This model divides your application into three layers: the presentation layer, the logic layer, and the data layer. The presentation layer deals with user interaction, while the logic layer handles the application's core logic, and the data layer manages data persistence.
+
+While the three-tier model is a good starting point for application architecture, it can easily lead to high coupling between the layers. To mitigate this, we use techniques like dependency injection and abstract classes. However, with hexagonal architecture, we take decoupling to a whole new level.
+
+In software development, different terms are often used to refer to the same concept. If you haven't come across hexagonal architecture before, you might have heard of the ports and adapters pattern. Alistair Cockburn, the creator of hexagonal architecture, recognized the similarities between interacting with a database and interacting with external applications. They both follow a similar pattern. Just as we use interfaces and repositories for database interaction, we can utilize ports and adapters for all inputs and outputs in our application.
+
+Imagine your application as a hexagon, with the core logic residing at the center. The goal of hexagonal architecture is to create a port for each input and output of your application. A port is essentially an abstraction, allowing your application to interact with the outside world without being aware of the specifics. It serves as a contract that defines how your application interacts with other systems.
+
+Consider the scenario where you need to read and write data from a database. Instead of directly calling the database, you would have separate read and write methods. Your application shouldn't be concerned with where the data comes from; it could be a database, a file system, or even a message queue. What matters is that your application has a consistent way of reading and writing data. Therefore, a port acts as a custom interface defined by your application.
+
+While we often use interfaces to achieve a similar pattern in our code, we tend to inject too much context into those interfaces. For example, we might create an `IDbRepository` interface that allows writing to a database. However, your application shouldn't care about the specific storage mechanism—it only needs an interface with read and write methods.
+
+The next component in this pattern is the adapter. The adapter contains the core logic for writing to a database, file system, or any other destination. It serves as a converter that takes the output from the port and transforms it into a format usable by the external system. The crucial aspect is that the application itself, along with its port, remains unchanged regardless of any modifications made to the adapter. This decouples the application's logic from the underlying databases or external sources.
+
+Now, it's not just the outputs of your application that can follow this pattern—the inputs can also adopt it. There are various ways to interact with your application, such as through APIs or message queues. Regardless of the input method, the core logic of your application should remain unaffected. The inputs should remain consistent, allowing for flexibility in the system's interactions.
+
+In hexagonal architecture, your application consists of two sides: the driving side and the driven side. The input side drives the application to perform specific actions, while the output side is driven by the application itself. This driving and driven concept can be visualized using a hexagon.
+
+So, why is it called hexagonal architecture and not circular or triangular architecture? While there isn't a specific reason behind the
